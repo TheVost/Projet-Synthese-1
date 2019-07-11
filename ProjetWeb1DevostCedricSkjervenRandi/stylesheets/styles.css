@@ -1,0 +1,526 @@
+/**
+ * @file     styles.css
+ * @author   Cédric Devost et Randi Skjerven
+ * @version  1.0
+ * @date     2019-01-31
+ * @brief    fichiers css des pages principales de l'application du projet web 1
+ */
+
+@charset "UTF-8";
+
+/*Variables SCSS*/
+/*Mixin SCSS*/
+body {
+    margin: 0 auto;
+    font-family: 'Balthazar', serif;
+    background: #f8f8f8;
+}
+
+/*Cache certains éléments en fonction du format initial de la page*/
+h1 {
+    display: none;
+}
+
+#petit {
+    display: none;
+}
+
+#mobile {
+    display: none;
+}
+
+#star {
+    color: #c0311c;
+}
+
+/***************************************Mise en page de la page d'index*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    /****************************************************Mise en page de la navigation*/
+}
+
+header img {
+    width: 600px;
+    height: 600px;
+    margin-top: -200px;
+    margin-bottom: -250px;
+}
+
+header nav {
+    margin-top: 100px;
+    width: 75%;
+}
+
+header nav div {
+    float: right;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 1.7em;
+    margin-right: 30px;
+    color: #c0311c;
+}
+
+header nav div p {
+    margin: 0;
+}
+
+header nav div p:nth-child(2) {
+    float: right;
+}
+
+header nav div a {
+    color: #c0311c;
+}
+
+header nav ul {
+    clear: both;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    padding-top: 8px;
+}
+
+header nav ul li span {
+    margin-top: 25px;
+}
+
+header nav ul li a {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 2.5em;
+    color: #c0311c;
+    text-shadow: 0px 0px #080201;
+    transition: text-shadow .35s, color .35s;
+}
+
+header nav ul li a:hover {
+    color: #FFEEEC;
+    text-shadow: 3px 3px #080201;
+}
+
+#mainIndex {
+    margin: 40px 0 40px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+    /****************************************************Mise en page de l'aside*/
+#mainIndex aside {
+    width: 20%;
+}
+
+#mainIndex aside img {
+    width: 95%;
+    margin-top: 20%;
+}
+
+#mainIndex article {
+    width: 76%;
+    height: 61%;
+}
+
+/****************************************************Mise en page dde l'Article*/
+#mainIndex article #laDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#mainIndex article #laDate #date {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-size: 2em;
+    padding-left: 40px;
+    background: #FFEEEC;
+}
+
+#mainIndex article #laDate a {
+    font-size: 3em;
+}
+
+#mainIndex article a {
+    display: inline-block;
+    text-align: center;
+    font-size: 2.2em;
+    border: 1px solid #080201;
+    background: #FFEEEC;
+    width: 50px;
+    text-decoration: none;
+}
+
+#mainIndex article #divMain {
+    background: #cdcdcd;
+    border: 1px solid #080201;
+    padding-bottom: 45px;
+}
+
+/****************************************************Mise en page des cellules pour les cours*/
+#mainIndex article #divMain > a {
+    margin: 43px 20px 0 1%;
+    width: 360px;
+    height: 200px;
+    background: #f8f8f8;
+    color: #080201;
+    border-right: 3px solid #080201;
+    border-bottom: 3px solid #080201;
+    border-left: 3px solid #f8f8f8;
+    border-top: 3px solid #f8f8f8;
+    transition: border-right 0.5s, border-bottom 0.5s;
+}
+
+#mainIndex article #divMain > a div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5px;
+}
+
+#mainIndex article #divMain > a div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#mainIndex article #divMain > a div:nth-child(2) span:nth-child(1) {
+    color: #c0311c;
+}
+
+#mainIndex article #divMain > a div:nth-child(2) span:nth-child(2) {
+    color: #cdcdcd;
+    font-size: 0.9em;
+    text-shadow: 1px 1px #080201;
+}
+
+#mainIndex article #divMain > a div:nth-child(3) {
+    float: right;
+    color: #c0311c;
+    margin: -24px 0 0 0;
+}
+
+#mainIndex article #divMain > a div:nth-child(3) span:nth-child(1) {
+    position: relative;
+    bottom: 17px;
+}
+
+#mainIndex article #divMain > a div:nth-child(3) span:nth-child(2) {
+    font-size: 2.8em;
+    position: relative;
+    bottom: 5px;
+}
+
+#mainIndex article #divMain > a div:nth-child(3) span:nth-child(3) {
+    font-size: 2.1em;
+    position: relative;
+    bottom: 5px;
+}
+
+#mainIndex article #divMain a:hover {
+    border-right: 3px solid #f8f8f8;
+    border-bottom: 3px solid #f8f8f8;
+    border-left: 3px solid #080201;
+    border-top: 3px solid #080201;
+    transition: border-left 0.5s, border-top 0.5s;
+}
+
+/***************************************Mise en page de la page ADMIN*/
+#mainIndexAdmin {
+    margin: 40px 0 40px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+    /****************************************************Mise en page de l'Aside*/
+#mainIndexAdmin #adminAside {
+    width: 20%;
+}
+
+#mainIndexAdmin #adminAside img {
+    width: 95%;
+    margin-top: 5%;
+    opacity: 0.6;
+}
+
+#mainIndexAdmin #adminAside div {
+    position: relative;
+    bottom: 260px;
+    left: 20px;
+    color: #c0311c;
+    background: #FFEEEC;
+    border: 1px solid #080201;
+    width: 75%;
+    text-align: center;
+    padding: 10px;
+}
+
+#mainIndexAdmin #adminAside div input {
+    margin: 10px;
+}
+
+    /****************************************************Mise en page de la section article*/
+#mainIndexAdmin article {
+    width: 76%;
+    height: 61%;
+}
+
+#mainIndexAdmin article #laDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#mainIndexAdmin article #laDate .plusMoins {
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    font-size: 3em;
+    border: 1px solid #080201;
+    background: #FFEEEC;
+    text-decoration: none;
+}
+
+#mainIndexAdmin article #laDate #date {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    font-size: 2em;
+    padding-left: 40px;
+    background: #FFEEEC;
+}
+
+#mainIndexAdmin article #divMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #cdcdcd;
+    border: 1px solid #080201;
+    padding-bottom: 45px;
+}
+
+    /****************************************************Mise en page des cellules pour la gestion des cours*/
+#mainIndexAdmin article #divMain > div {
+    font-size: 2.2em;
+    margin: 43px 20px 0 20px;
+    width: 360px;
+    height: 200px;
+    background: #f8f8f8;
+    color: #080201;
+    border-right: 3px solid #080201;
+    border-bottom: 3px solid #080201;
+    border-left: 3px solid #f8f8f8;
+    border-top: 3px solid #f8f8f8;
+    transition: border-right 0.5s, border-bottom 0.5s;
+}
+
+#mainIndexAdmin article #divMain > div div:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5px;
+}
+
+#mainIndexAdmin article #divMain > div div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+#mainIndexAdmin article #divMain > div div:nth-child(2) span:nth-child(1) {
+    color: #c0311c;
+}
+
+#mainIndexAdmin article #divMain > div div:nth-child(2) span:nth-child(2) {
+    color: #cdcdcd;
+    font-size: 0.9em;
+    text-shadow: 1px 1px #080201;
+}
+
+#mainIndexAdmin article #divMain > div div:nth-child(3) {
+    text-align: center;
+    font-size: 0.7em;
+    color: #c0311c;
+    margin: 40px 0 0 0;
+}
+
+#mainIndexAdmin article #divMain > div div:nth-child(3) a {
+    color: #080201;
+}
+
+/***************************************Mise en page de la page de modification des inscriptions par l'ADMIN*/
+#mainModifsAdmin {
+    text-align: center;
+}
+
+#mainModifsAdmin span {
+    color: #c0311c;
+}
+
+#mainModifsAdmin table {
+    border-spacing: 0;
+    margin: 0 auto;
+}
+
+#mainModifsAdmin th,
+#mainModifsAdmin td {
+    padding: 5px 20px;
+    text-align: left;
+    border-bottom: 1px solid #000;
+}
+
+/****************************************************Mise en page du Footer*/
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: #080201;
+    color: #f8f8f8;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 1.6em;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/***********************************Mise en Page relative à la page de connexion*/
+#connexionBody {
+    width: 600px;
+}
+
+#connexionHeader {
+    border: none;
+}
+
+#connexionHeader img {
+    width: 600px;
+    margin-bottom: -100px;
+    z-index: -10;
+}
+
+#connexionMain form {
+    width: 600px;
+}
+
+#connexionMain form label {
+    font-size: 1.5em;
+}
+
+#connexionMain #connexionNav {
+    clear: both;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#connexionMain #connecter {
+    margin: 20px 40%;
+}
+
+/****************************************Mise en page de la page d'inscription*/
+#inscriptionMain form input {
+    float: right;
+    width: 300px;
+}
+
+#inscriptionMain form select {
+    width: 300px;
+    float: right;
+}
+
+#inscriptionMain form p {
+    font-size: 1.5em;
+    width: 600px;
+}
+
+#inscriptionMain form #inscrire {
+    width: 200px;
+    height: 50px;
+}
+
+#active {
+    color: #cdcdcd;
+    text-shadow: 2px 2px #080201;
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 960px*/
+@media screen and (max-width: 1200px) {
+    #mobile {
+        display: block;
+        max-height: 170px;
+        margin: 34px 0 -49px 0;
+    }
+
+    #pc {
+        display: none;
+    }
+
+    body {
+        min-width: 600px;
+    }
+
+    main {
+        margin-bottom: 150px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    nav {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    nav div {
+        text-align: center;
+        float: none;
+    }
+
+    nav #petit {
+        display: flex;
+        flex-direction: column;
+        justify-content: justify-content;
+    }
+
+    nav #gros {
+        display: none;
+    }
+
+    footer p:nth-child(1),
+    footer p:nth-child(2) {
+        display: none;
+    }
+
+    footer #foot {
+        display: block;
+    }
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 480px*/
+@media screen and (max-width: 600px) {
+    #divMain {
+        width: 395px;
+    }
+
+    #laDate {
+        margin: 0 auto;
+    }
+}

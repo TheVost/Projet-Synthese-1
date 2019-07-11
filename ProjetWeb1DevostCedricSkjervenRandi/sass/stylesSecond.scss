@@ -1,0 +1,437 @@
+/*Variables SCSS*/
+$rouge: #c0311c;
+$noir: #080201;
+$rose: #FFEEEC;
+$gris: #cdcdcd;
+$blanc: #f8f8f8;
+
+$font1: Copperplate,
+"Copperplate Gothic Light",
+fantasy;
+
+/*Mixin SCSS*/
+@mixin flex($display, $direction, $justify) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin wHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin text($align, $size){
+    text-align: $align;
+    font-size: $size;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Balthazar', serif;
+    background: $blanc;
+}
+
+#petit {
+    display: none;
+}
+
+#mobile {
+    display: none;
+}
+
+#mainPortable{
+    display: none;
+}
+
+#active {
+    color: $gris;
+    text-shadow: 2px 2px $noir;
+}
+
+/***************************************Mise en page de la page d'index*/
+header {
+    @include flex(flex, row, space-between);
+    border-bottom: 1px solid black;
+
+    img {
+        @include wHeight(600px, 600px);
+        margin-top: -200px;
+        margin-bottom: -250px;
+    }
+
+    /****************************************************Mise en page de la navigation*/
+    nav {
+        margin-top: 100px;
+        width: 75%;
+
+        div {
+            float: right;
+            font-family: $font1;
+            font-size: 1.7em;
+            margin-right: 30px;
+            color: $rouge;
+
+            p {
+                margin: 0;
+            }
+
+            p:nth-child(2) {
+                float: right;
+            }
+
+            a {
+                color: $rouge;
+            }
+        }
+
+        ul {
+            clear: both;
+            list-style-type: none;
+            @include flex(flex, row, space-around);
+            border-top: 1px solid black;
+            padding-top: 8px;
+
+            li {
+
+                span {
+                    margin-top: 25px;
+                }
+
+                a {
+                    font-family: 'Allerta Stencil', sans-serif;
+                    font-weight: 500;
+                    text-decoration: none;
+                    font-size: 2.5em;
+                    color: $rouge;
+                    text-shadow: 0px 0px $noir;
+                    transition: text-shadow .35s, color .35s;
+                }
+
+                a:hover {
+                    color: $rose;
+                    text-shadow: 3px 3px $noir;
+                }
+            }
+        }
+    }
+}
+
+#mainEquipe{
+    width: 95%;
+    margin: 0 auto;
+
+    p {
+        @include text(justify, 2em);
+        width: 90%;
+        margin-left: 30px;
+    }
+
+    /* entire container, keeps perspective */
+    .flip-container {
+        perspective: 1000px;
+    }
+
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper,
+    .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container,
+    .front,
+    .back {
+        width: 500px;
+        text-align: center;
+    }
+
+    /* flip speed goes here */
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+    }
+
+    /* hide back of pane during swap */
+    .front,
+    .back {
+        backface-visibility: hidden;
+    }
+
+    /* front pane, placed above back */
+    .front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg);
+    }
+
+    /* back, initially hidden pane */
+    .back {
+        transform: rotateY(180deg);
+        position: relative;
+        bottom: 400px;
+        right: 30px;
+        border: 1px solid $noir;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    h1 {
+        @include text(center, 3.5em);
+        color: $rouge;
+        margin-bottom: -50px;
+    }
+
+    h2 {
+        position: relative;
+        top: 360px;
+        @include text(center, 3em);
+        color: $noir;
+        background: $rose;
+        width: 60%;
+    }
+
+    article {
+        @include flex(flex, row, space-around);
+        margin-bottom: -275px;
+    }
+}
+
+#mainIndex {
+
+    width: 95%;
+    margin: 0 auto;
+
+    p {
+        @include text(justify, 2em);
+        width: 90%;
+        margin-left: 30px;
+    }
+
+    /* entire container, keeps perspective */
+    .flip-container {
+        perspective: 1000px;
+    }
+
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper,
+    .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+    .flip-container,
+    .front,
+    .back {
+        width: 700px;
+    }
+
+    /* flip speed goes here */
+    .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+
+        position: relative;
+    }
+
+    /* hide back of pane during swap */
+    .front,
+    .back {
+        backface-visibility: hidden;
+    }
+
+    /* front pane, placed above back */
+    .front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg);
+    }
+
+    /* back, initially hidden pane */
+    .back {
+        transform: rotateY(180deg);
+        position: relative;
+        bottom: 300px;
+        right: 30px;
+        border: 1px solid $noir;
+        text-align: justify;
+        padding: 0 10px;
+    }
+
+    h1 {
+        @include text(center, 3.5em);
+        color: $rouge;
+        margin-bottom: -50px;
+    }
+
+    h2 {
+        position: relative;
+        top: 360px;
+        @include text(center, 3em);
+        color: $noir;
+        background: $rose;
+        width: 60%;
+    }
+
+    article {
+        @include flex(flex, row, space-around);
+        margin-bottom: -275px;
+    }
+}
+
+/****************************************************Mise en page se la section Contact*/
+#contact {
+    @include flex(flex, row, space-around);
+    padding-top: 120px;
+    text-align: center;
+    margin-top: -35px;
+
+    h1 {
+        color: $noir;
+        font-size: 2.2em;
+    }
+
+    div {
+        background: $rose;
+        width: 100%;
+        margin-top: 0;
+
+        p {
+            color: $noir;
+            font-size: 1.3em;
+        }
+
+        span {
+            color: $rouge;
+            font-size: 1.7em;
+        }
+    }
+}
+
+/****************************************************Mise en page du Footer*/
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: $noir;
+    color: $blanc;
+    font-family: $font1;
+    font-size: 1.6em;
+
+    div {
+        @include flex(flex, row, space-around)
+    }
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 960px*/
+@media screen and (max-width: 1200px) {
+    #mobile {
+        display: block;
+        max-height: 170px;
+        margin: 34px 0 -49px 0;
+    }
+
+    #pc {
+        display: none;
+    }
+
+    body {
+        min-width: 600px;
+    }
+
+    main {
+        margin-bottom: 150px;
+    }
+
+    #contact {
+        @include flex(flex, column, space-around);
+
+        div {
+            margin-bottom: 50px;
+        }
+    }
+
+    #mainIndex, #mainEquipe {
+        display: none;
+    }
+    
+    #mainPortable{
+        max-width: 700px;
+        margin: 0 auto 150px auto;
+        display: block;
+        text-align: center;
+        
+        img{
+            width: 700px;
+        }
+        
+        h2{
+            color: $rouge;
+        }
+        
+        p{
+            font-size: 1.2em;
+        }
+    }
+
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    nav {
+        margin: 0 auto;
+        width: 100%;
+
+        div {
+            text-align: center;
+            float: none;
+        }
+
+        #petit {
+            @include flex(flex, column, justify-content);
+        }
+
+        #gros {
+            display: none;
+        }
+    }
+
+    footer {
+
+        p:nth-child(1),
+        p:nth-child(2) {
+            display: none;
+        }
+
+        #foot {
+            display: block;
+        }
+    }
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 480px*/
+@media screen and (max-width: 600px) {
+    #mainPortable{
+        max-width: 450px;
+        margin: 0 auto 150px auto;
+        display: block;
+        
+        img{
+            width: 450px;
+        }
+        
+        h2{
+            color: $rouge;
+        }
+        
+        p{
+            font-size: 1.2em;
+        }
+    }
+    
+    #mainIndex{
+        display: none;
+    }
+}

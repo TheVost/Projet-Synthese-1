@@ -1,0 +1,437 @@
+/**
+ * @file     stylesSecond.css
+ * @author   Cédric Devost et Randi Skjerven
+ * @version  1.0
+ * @date     2019-01-31
+ * @brief    fichiers css des pages de contenu secondaire de l'application du projet web 1
+ */
+
+@charset "UTF-8";
+
+/*Variables SCSS*/
+/*Mixin SCSS*/
+body {
+    margin: 0 auto;
+    font-family: 'Balthazar', serif;
+    background: #f8f8f8;
+}
+
+/*modification du display selon la taille initiale de la page*/
+#petit {
+    display: none;
+}
+
+#mobile {
+    display: none;
+}
+
+#mainPortable {
+    display: none;
+}
+
+#active {
+    color: #cdcdcd;
+    text-shadow: 2px 2px #080201;
+}
+
+/***************************************Mise en page de la page d'index*/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    /****************************************************Mise en page de la navigation*/
+}
+
+header img {
+    width: 600px;
+    height: 600px;
+    margin-top: -200px;
+    margin-bottom: -250px;
+}
+
+header nav {
+    margin-top: 100px;
+    width: 75%;
+}
+
+header nav div {
+    float: right;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 1.7em;
+    margin-right: 30px;
+    color: #c0311c;
+}
+
+header nav div p {
+    margin: 0;
+}
+
+header nav div p:nth-child(2) {
+    float: right;
+}
+
+header nav div a {
+    color: #c0311c;
+}
+
+header nav ul {
+    clear: both;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    padding-top: 8px;
+}
+
+header nav ul li span {
+    margin-top: 25px;
+}
+
+header nav ul li a {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 2.5em;
+    color: #c0311c;
+    text-shadow: 0px 0px #080201;
+    transition: text-shadow .35s, color .35s;
+}
+
+header nav ul li a:hover {
+    color: #FFEEEC;
+    text-shadow: 3px 3px #080201;
+}
+
+/*********************************************mise en page du contenu principal de la page notre équipe*/
+#mainEquipe {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#mainEquipe p {
+    text-align: justify;
+    font-size: 2em;
+    width: 90%;
+    margin-left: 30px;
+}
+
+/*concernant les images qui flip*/
+#mainEquipe .flip-container {
+    perspective: 1000px;
+}
+
+#mainEquipe .flip-container:hover .flipper,
+#mainEquipe .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+#mainEquipe .flip-container,
+#mainEquipe .front,
+#mainEquipe .back {
+    width: 500px;
+    text-align: center;
+}
+
+#mainEquipe .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#mainEquipe .front,
+#mainEquipe .back {
+    backface-visibility: hidden;
+}
+
+#mainEquipe .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+#mainEquipe .back {
+    transform: rotateY(180deg);
+    position: relative;
+    bottom: 400px;
+    right: 30px;
+    border: 1px solid #080201;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/*suite de la mise en page du contenu normal*/
+#mainEquipe h1 {
+    text-align: center;
+    font-size: 3.5em;
+    color: #c0311c;
+    margin-bottom: -50px;
+}
+
+#mainEquipe h2 {
+    position: relative;
+    top: 360px;
+    text-align: center;
+    font-size: 3em;
+    color: #080201;
+    background: #FFEEEC;
+    width: 60%;
+}
+
+#mainEquipe article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: -275px;
+}
+
+/*********************************************mise en page du contenu principal de la page d'activités*/
+#mainIndex {
+    width: 95%;
+    margin: 0 auto;
+    /* entire container, keeps perspective */
+    /* flip the pane when hovered */
+    /* flip speed goes here */
+    /* hide back of pane during swap */
+    /* front pane, placed above back */
+    /* back, initially hidden pane */
+}
+
+#mainIndex p {
+    text-align: justify;
+    font-size: 2em;
+    width: 90%;
+    margin-left: 30px;
+}
+
+/*concernant les images qui flip*/
+#mainIndex .flip-container {
+    perspective: 1000px;
+}
+
+#mainIndex .flip-container:hover .flipper,
+#mainIndex .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+#mainIndex .flip-container,
+#mainIndex .front,
+#mainIndex .back {
+    width: 700px;
+}
+
+#mainIndex .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+#mainIndex .front,
+#mainIndex .back {
+    backface-visibility: hidden;
+}
+
+#mainIndex .front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+#mainIndex .back {
+    transform: rotateY(180deg);
+    position: relative;
+    bottom: 300px;
+    right: 30px;
+    border: 1px solid #080201;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+/*suite du contenu normal*/
+#mainIndex h1 {
+    text-align: center;
+    font-size: 3.5em;
+    color: #c0311c;
+    margin-bottom: -50px;
+}
+
+#mainIndex h2 {
+    position: relative;
+    top: 360px;
+    text-align: center;
+    font-size: 3em;
+    color: #080201;
+    background: #FFEEEC;
+    width: 60%;
+}
+
+#mainIndex article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: -275px;
+}
+
+/****************************************************Mise en page se la section Contact*/
+#contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 120px;
+    text-align: center;
+    margin-top: -35px;
+}
+
+#contact h1 {
+    color: #080201;
+    font-size: 2.2em;
+}
+
+#contact div {
+    background: #FFEEEC;
+    width: 100%;
+    margin-top: 0;
+}
+
+#contact div p {
+    color: #080201;
+    font-size: 1.3em;
+}
+
+#contact div span {
+    color: #c0311c;
+    font-size: 1.7em;
+}
+
+/****************************************************Mise en page du Footer*/
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: #080201;
+    color: #f8f8f8;
+    font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+    font-size: 1.6em;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 960px*/
+@media screen and (max-width: 1200px) {
+    #mobile {
+        display: block;
+        max-height: 170px;
+        margin: 34px 0 -49px 0;
+    }
+
+    #pc {
+        display: none;
+    }
+
+    body {
+        min-width: 600px;
+    }
+
+    main {
+        margin-bottom: 150px;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #contact div {
+        margin-bottom: 50px;
+    }
+
+    #mainIndex,
+    #mainEquipe {
+        display: none;
+    }
+
+    #mainPortable {
+        max-width: 700px;
+        margin: 0 auto 150px auto;
+        display: block;
+        text-align: center;
+    }
+
+    #mainPortable img {
+        width: 700px;
+    }
+
+    #mainPortable h2 {
+        color: #c0311c;
+    }
+
+    #mainPortable p {
+        font-size: 1.2em;
+    }
+
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    nav {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    nav div {
+        text-align: center;
+        float: none;
+    }
+
+    nav #petit {
+        display: flex;
+        flex-direction: column;
+        justify-content: justify-content;
+    }
+
+    nav #gros {
+        display: none;
+    }
+
+    footer p:nth-child(1),
+    footer p:nth-child(2) {
+        display: none;
+    }
+
+    footer #foot {
+        display: block;
+    }
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 480px*/
+@media screen and (max-width: 600px) {
+    #mainPortable {
+        max-width: 450px;
+        margin: 0 auto 150px auto;
+        display: block;
+    }
+
+    #mainPortable img {
+        width: 450px;
+    }
+
+    #mainPortable h2 {
+        color: #c0311c;
+    }
+
+    #mainPortable p {
+        font-size: 1.2em;
+    }
+
+    #mainIndex {
+        display: none;
+    }
+}

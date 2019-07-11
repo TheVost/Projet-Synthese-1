@@ -1,0 +1,517 @@
+/*Variables SCSS*/
+$rouge: #c0311c;
+$noir: #080201;
+$rose: #FFEEEC;
+$gris: #cdcdcd;
+$blanc: #f8f8f8;
+
+$font1: Copperplate,
+"Copperplate Gothic Light",
+fantasy;
+
+/*Mixin SCSS*/
+@mixin flex($display, $direction, $justify) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+@mixin wHeight($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin text($align, $size){
+    text-align: $align;
+    font-size: $size;
+}
+
+@mixin border($size, $state, $color){
+    border: $size $state $color;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Balthazar', serif;
+    background: $blanc;
+}
+
+h1 {
+    display: none;
+}
+
+#petit {
+    display: none;
+}
+
+#mobile {
+    display: none;
+}
+
+#star {
+    color: $rouge;
+}
+
+/***************************************Mise en page de la page d'index*/
+header {
+    @include flex(flex, row, space-between);
+    border-bottom: 1px solid black;
+
+    img {
+        @include wHeight(600px, 600px);
+        margin-top: -200px;
+        margin-bottom: -250px;
+    }
+
+    /****************************************************Mise en page de la navigation*/
+    nav {
+        margin-top: 100px;
+        width: 75%;
+
+        div {
+            float: right;
+            font-family: $font1;
+            font-size: 1.7em;
+            margin-right: 30px;
+            color: $rouge;
+
+            p {
+                margin: 0;
+            }
+
+            p:nth-child(2) {
+                float: right;
+            }
+
+            a {
+                color: $rouge;
+            }
+        }
+
+        ul {
+            clear: both;
+            list-style-type: none;
+            @include flex(flex, row, space-around);
+            border-top: 1px solid black;
+            padding-top: 8px;
+
+            li {
+
+                span {
+                    margin-top: 25px;
+                }
+
+                a {
+                    font-family: 'Allerta Stencil', sans-serif;
+                    font-weight: 500;
+                    text-decoration: none;
+                    font-size: 2.5em;
+                    color: $rouge;
+                    text-shadow: 0px 0px $noir;
+                    transition: text-shadow .35s, color .35s;
+                }
+
+                a:hover {
+                    color: $rose;
+                    text-shadow: 3px 3px $noir;
+                }
+            }
+        }
+    }
+}
+
+#mainIndex {
+    margin: 40px 0 40px 40px;
+    @include flex(flex, row, space-around);
+
+    /****************************************************Mise en page de l'aside*/
+    aside {
+        width: 20%;
+
+        img {
+            width: 95%;
+            margin-top: 20%;
+        }
+    }
+
+    /****************************************************Mise en page dde l'Article*/
+    article {
+        @include wHeight(76%, 61%);
+
+        #laDate {
+            @include flex(flex, row, flex-start);
+
+            #date {
+                @include wHeight(250px, 50px);
+                @include text(center, 2em);
+                padding-left: 40px;
+                background: $rose;
+            }
+
+            a {
+                font-size: 3em;
+            }
+        }
+
+        a {
+            display: inline-block;
+            @include text(center, 2.2em);
+            @include border(1px, solid, $noir);
+            background: $rose;
+            width: 50px;
+            text-decoration: none;
+        }
+
+        #divMain {
+            background: $gris;
+            @include border(1px, solid, $noir);
+            padding-bottom: 45px;
+
+            > a {
+                margin: 43px 20px 0 1%;
+                @include wHeight(360px, 200px);
+                background: $blanc;
+                color: $noir;
+                border-right: 3px solid $noir;
+                border-bottom: 3px solid $noir;
+                border-left: 3px solid $blanc;
+                border-top: 3px solid $blanc;
+                transition: border-right 0.5s, border-bottom 0.5s;
+
+                div:nth-child(1) {
+                    @include flex(flex, row, space-between);
+                    margin: 0 5px;
+                }
+
+                div:nth-child(2) {
+                    @include flex(flex, column, space-between);
+                    margin: 20px;
+
+                    span:nth-child(1) {
+                        color: $rouge;
+                    }
+
+                    span:nth-child(2) {
+                        color: $gris;
+                        font-size: 0.9em;
+                        text-shadow: 1px 1px $noir;
+                    }
+                }
+
+                div:nth-child(3) {
+                    float: right;
+                    color: $rouge;
+                    margin: -24px 0 0 0;
+
+                    span:nth-child(1) {
+                        position: relative;
+                        bottom: 17px;
+                    }
+
+                    span:nth-child(2) {
+                        font-size: 2.8em;
+                        position: relative;
+                        bottom: 5px;
+                    }
+                    span:nth-child(3) {
+                        font-size: 2.1em;
+                        position: relative;
+                        bottom: 5px;
+                    }
+                }
+            }
+
+            a:hover {
+                border-right: 3px solid $blanc;
+                border-bottom: 3px solid $blanc;
+                border-left: 3px solid $noir;
+                border-top: 3px solid $noir;
+                transition: border-left 0.5s, border-top 0.5s;
+            }
+        }
+    }
+}
+
+/***************************************Mise en page de la page ADMIN*/
+#mainIndexAdmin {
+    margin: 40px 0 40px 40px;
+    @include flex(flex, row, space-around);
+
+    /****************************************************Mise en page de l'Aside*/
+    #adminAside {
+        width: 20%;
+
+        img {
+            width: 95%;
+            margin-top: 5%;
+            opacity: 0.6;
+        }
+
+        div {
+            position: relative;
+            bottom: 260px;
+            left: 20px;
+            color: $rouge;
+            background: $rose;
+            @include border(1px, solid, $noir);
+            width: 75%;
+            text-align: center;
+            padding: 10px;
+
+            input {
+                margin: 10px;
+            }
+        }
+    }
+
+    /****************************************************Mise en page de la section article*/
+    article {
+        @include wHeight(76%, 61%);
+
+        #laDate {
+            @include flex(flex, row, flex-start);
+
+            .plusMoins {
+                width: 50px;
+                display: inline-block;
+                @include text(center, 3em);
+                @include border(1px, solid, $noir);
+                background: $rose;
+                text-decoration: none;
+            }
+
+            #date {
+                @include wHeight(250px, 50px);
+                @include text(center, 2em);
+                padding-left: 40px;
+                background: $rose;
+            }
+        }
+
+        #divMain {
+            @include flex(flex, row, space-between);
+            flex-wrap: wrap;
+            background: $gris;
+            @include border(1px, solid, $noir);
+            padding-bottom: 45px;
+
+            > div {
+                font-size: 2.2em;
+                margin: 43px 20px 0 20px;
+                @include wHeight(360px, 200px);
+                background: $blanc;
+                color: $noir;
+                border-right: 3px solid $noir;
+                border-bottom: 3px solid $noir;
+                border-left: 3px solid $blanc;
+                border-top: 3px solid $blanc;
+                transition: border-right 0.5s, border-bottom 0.5s;
+
+                div:nth-child(1) {
+                    @include flex(flex, row, space-between);
+                    margin: 0 5px;
+                }
+
+                div:nth-child(2) {
+                    @include flex(flex, column, space-between);
+                    margin: 20px;
+
+                    span:nth-child(1) {
+                        color: $rouge;
+                    }
+
+                    span:nth-child(2) {
+                        color: $gris;
+                        font-size: 0.9em;
+                        text-shadow: 1px 1px $noir;
+                    }
+                }
+
+                div:nth-child(3) {
+                    @include text(center, 0.7em);
+                    color: $rouge;
+                    margin: 40px 0 0 0;
+
+                    a {
+                        color: $noir;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/***************************************Mise en page de la page de modification des inscriptions par l'ADMIN*/
+#mainModifsAdmin {
+    text-align: center;
+
+    span {
+        color: $rouge;
+    }
+
+    table {
+        border-spacing: 0;
+        margin: 0 auto;
+    }
+
+    th,
+    td {
+        padding: 5px 20px;
+        text-align: left;
+        border-bottom: 1px solid #000;
+    }
+}
+
+/****************************************************Mise en page du Footer*/
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    background: $noir;
+    color: $blanc;
+    font-family: $font1;
+    font-size: 1.6em;
+
+    div {
+        @include flex(flex, row, space-around)
+    }
+}
+
+/***********************************Mise en Page relative à la page de connexion*/
+#connexionBody {
+    width: 600px;
+}
+
+#connexionHeader {
+    border: none;
+
+    img {
+        width: 600px;
+        margin-bottom: -100px;
+        z-index: -10;
+    }
+}
+
+#connexionMain {
+
+    form {
+        width: 600px;
+
+        label {
+            font-size: 1.5em;
+        }
+    }
+
+    #connexionNav {
+        clear: both;
+        @include flex(flex, row, space-between);
+    }
+
+    #connecter {
+        margin: 20px 40%;
+    }
+}
+
+/****************************************Mise en page de la page d'inscription*/
+#inscriptionMain {
+
+    form {
+
+        input {
+            float: right;
+            width: 300px;
+        }
+
+        select {
+            width: 300px;
+            float: right;
+        }
+
+        p {
+            font-size: 1.5em;
+            width: 600px;
+        }
+
+        #inscrire {
+            @include wHeight(200px, 50px);
+        }
+    }
+}
+
+#active {
+    color: $gris;
+    text-shadow: 2px 2px $noir;
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 960px*/
+@media screen and (max-width: 1200px) {
+    #mobile {
+        display: block;
+        max-height: 170px;
+        margin: 34px 0 -49px 0;
+    }
+
+    #pc {
+        display: none;
+    }
+
+    body {
+        min-width: 600px;
+    }
+
+    main {
+        margin-bottom: 150px;
+    }
+
+    aside {
+        display: none;
+    }
+
+    header {
+        display: block;
+        text-align: center;
+    }
+
+    nav {
+        margin: 0 auto;
+        width: 100%;
+
+        div {
+            text-align: center;
+            float: none;
+        }
+
+        #petit {
+            @include flex(flex, column, justify-content);
+        }
+
+        #gros {
+            display: none;
+        }
+    }
+
+
+    footer {
+
+        p:nth-child(1),
+        p:nth-child(2) {
+            display: none;
+        }
+
+        #foot {
+            display: block;
+        }
+    }
+}
+
+/*******************************Mise en page spécifique pour les fenêtre de maximum 480px*/
+@media screen and (max-width: 600px) {
+    #divMain {
+        width: 395px;
+    }
+
+    #laDate {
+        margin: 0 auto;
+    }
+}
